@@ -20,8 +20,8 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "--";
-var adminprefix = '--'
+const prefix = "*";
+var adminprefix = '*'
 /////////////////////////
 ////////////////////////
 
@@ -314,10 +314,10 @@ function play(guild, song) {
 
 
 client.on('message', message => {
-    if (message.content === '--help') {
+    if (message.content === '*help') {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر الميوزك...**')
-        .setDescription('**برفكس البوت (--)**')
+        .setDescription('**برفكس البوت (!)**')
         .addField('play', 'لتشغيل اغنية')
         .addField('join', 'دخول رومك الصوتي')
         .addField('disconnect', 'الخروج من رومك الصوتي')
@@ -331,7 +331,7 @@ client.on('message', message => {
     }
 });
 
-const developers = ["283880597095710721","id"]
+const developers = ["472413769700474901","283880597095710721"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
